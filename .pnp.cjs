@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.29"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:18.2.0"],\
+            ["recoil", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.7.7"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
@@ -2508,6 +2509,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hamt_plus", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/hamt_plus-npm-1.0.2-67a52ee1df-af26ea32db.zip/node_modules/hamt_plus/",\
+          "packageDependencies": [\
+            ["hamt_plus", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["has", [\
         ["npm:1.0.3", {\
           "packageLocation": "./.yarn/cache/has-npm-1.0.3-b7f00631c1-b9ad53d53b.zip/node_modules/has/",\
@@ -4134,6 +4144,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["recoil", [\
+        ["npm:0.7.7", {\
+          "packageLocation": "./.yarn/cache/recoil-npm-0.7.7-4452f58b67-65edecbcb8.zip/node_modules/recoil/",\
+          "packageDependencies": [\
+            ["recoil", "npm:0.7.7"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.7.7", {\
+          "packageLocation": "./.yarn/__virtual__/recoil-virtual-7d97dffffd/0/cache/recoil-npm-0.7.7-4452f58b67-65edecbcb8.zip/node_modules/recoil/",\
+          "packageDependencies": [\
+            ["recoil", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.7.7"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["@types/react-native", null],\
+            ["hamt_plus", "npm:1.0.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:18.2.0"],\
+            ["react-native", null]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react-native",\
+            "@types/react",\
+            "react-dom",\
+            "react-native",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["reflect.getprototypeof", [\
         ["npm:1.0.3", {\
           "packageLocation": "./.yarn/cache/reflect.getprototypeof-npm-1.0.3-6e9c0e2b03-843e2506c0.zip/node_modules/reflect.getprototypeof/",\
@@ -4722,6 +4763,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.29"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:18.2.0"],\
+            ["recoil", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.7.7"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
