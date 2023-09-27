@@ -12,31 +12,36 @@ datasource db {
 }
 
 model User {
-  id String @id
+  id String @id @default(uuid())
   email String
   nickname String
   profileImageUrl String
   createdAt DateTime @default(now())
-  provider String
+  provider Provider
   workbooks Workbook[]
 }
 
 model Workbook {
-  id String @id
+  id String @id @default(uuid())
   title String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime? @updatedAt
   userId String
   user User @relation(fields: [userId], references: [id])
   questions Question[]
 }
 
 model Question {
-  id String @id
+  id String @id @default(uuid())
   title String
   answer String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   workbookId String
-  workbook Workbook @relation(fields: [workbookId], references: [id])
+  workbook Workbook @relation(fields: [workbookId], references: [id], onDelete: Cascade)
+}
+
+enum Provider {
+  kakao
+  google
+  naver
+  instagram
 }
