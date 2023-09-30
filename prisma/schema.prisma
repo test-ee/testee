@@ -3,9 +3,45 @@
 
 generator client {
   provider = "prisma-client-js"
+  output = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  email String
+  nickname String
+  profileImageUrl String
+  createdAt DateTime @default(now())
+  provider Provider
+  workbooks Workbook[]
+}
+
+model Workbook {
+  id String @id @default(uuid())
+  title String
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  questions Question[]
+}
+
+model Question {
+  id String @id @default(uuid())
+  title String
+  answer String
+  workbookId String
+  workbook Workbook @relation(fields: [workbookId], references: [id], onDelete: Cascade)
+}
+
+enum Provider {
+  kakao
+  google
+  naver
+  instagram
 }
