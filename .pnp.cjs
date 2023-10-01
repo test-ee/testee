@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:6.1.2"],\
             ["@testing-library/react", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:14.0.0"],\
             ["@types/jest", "npm:29.5.4"],\
+            ["@types/jsonwebtoken", "npm:9.0.3"],\
             ["@types/node", "npm:20.5.7"],\
             ["@types/react", "npm:18.2.21"],\
             ["@types/react-dom", "npm:18.2.7"],\
@@ -65,6 +66,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.6.13"],\
             ["jest", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
             ["jest-environment-jsdom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
+            ["jsonwebtoken", "npm:9.0.2"],\
             ["next", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:13.4.19"],\
             ["next-auth", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:4.23.1"],\
             ["postcss", "npm:8.4.29"],\
@@ -7221,6 +7223,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/jsonwebtoken", [\
+        ["npm:9.0.3", {\
+          "packageLocation": "./.yarn/cache/@types-jsonwebtoken-npm-9.0.3-b373dd72bf-2debf3adb1.zip/node_modules/@types/jsonwebtoken/",\
+          "packageDependencies": [\
+            ["@types/jsonwebtoken", "npm:9.0.3"],\
+            ["@types/node", "npm:20.5.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/keyv", [\
         ["npm:3.1.4", {\
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.4-a8082ea56b-e009a2bfb5.zip/node_modules/@types/keyv/",\
@@ -9509,6 +9521,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["buffer-equal-constant-time", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/buffer-equal-constant-time-npm-1.0.1-41826f3419-80bb945f5d.zip/node_modules/buffer-equal-constant-time/",\
+          "packageDependencies": [\
+            ["buffer-equal-constant-time", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["buffer-from", [\
         ["npm:1.1.2", {\
           "packageLocation": "./.yarn/cache/buffer-from-npm-1.1.2-03d2f20d7e-0448524a56.zip/node_modules/buffer-from/",\
@@ -11069,6 +11090,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/eastasianwidth-npm-0.2.0-c37eb16bd1-7d00d7cd8e.zip/node_modules/eastasianwidth/",\
           "packageDependencies": [\
             ["eastasianwidth", "npm:0.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ecdsa-sig-formatter", [\
+        ["npm:1.0.11", {\
+          "packageLocation": "./.yarn/cache/ecdsa-sig-formatter-npm-1.0.11-b6784e7852-207f9ab1c2.zip/node_modules/ecdsa-sig-formatter/",\
+          "packageDependencies": [\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15108,6 +15139,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["jsonwebtoken", [\
+        ["npm:9.0.2", {\
+          "packageLocation": "./.yarn/cache/jsonwebtoken-npm-9.0.2-42c6b14d02-fc739a6a8b.zip/node_modules/jsonwebtoken/",\
+          "packageDependencies": [\
+            ["jsonwebtoken", "npm:9.0.2"],\
+            ["jws", "npm:3.2.2"],\
+            ["lodash.includes", "npm:4.3.0"],\
+            ["lodash.isboolean", "npm:3.0.3"],\
+            ["lodash.isinteger", "npm:4.0.4"],\
+            ["lodash.isnumber", "npm:3.0.3"],\
+            ["lodash.isplainobject", "npm:4.0.6"],\
+            ["lodash.isstring", "npm:4.0.1"],\
+            ["lodash.once", "npm:4.1.1"],\
+            ["ms", "npm:2.1.3"],\
+            ["semver", "npm:7.5.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["jsx-ast-utils", [\
         ["npm:3.3.5", {\
           "packageLocation": "./.yarn/cache/jsx-ast-utils-npm-3.3.5-114c80f97a-f4b05fa4d7.zip/node_modules/jsx-ast-utils/",\
@@ -15117,6 +15167,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["array.prototype.flat", "npm:1.3.1"],\
             ["object.assign", "npm:4.1.4"],\
             ["object.values", "npm:1.1.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jwa", [\
+        ["npm:1.4.1", {\
+          "packageLocation": "./.yarn/cache/jwa-npm-1.4.1-4f19d6572c-ff30ea7c2d.zip/node_modules/jwa/",\
+          "packageDependencies": [\
+            ["jwa", "npm:1.4.1"],\
+            ["buffer-equal-constant-time", "npm:1.0.1"],\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jws", [\
+        ["npm:3.2.2", {\
+          "packageLocation": "./.yarn/cache/jws-npm-3.2.2-c1ae59c7af-f0213fe5b7.zip/node_modules/jws/",\
+          "packageDependencies": [\
+            ["jws", "npm:3.2.2"],\
+            ["jwa", "npm:1.4.1"],\
+            ["safe-buffer", "npm:5.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15334,11 +15407,74 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lodash.includes", [\
+        ["npm:4.3.0", {\
+          "packageLocation": "./.yarn/cache/lodash.includes-npm-4.3.0-3a2f6fa22c-71092c1305.zip/node_modules/lodash.includes/",\
+          "packageDependencies": [\
+            ["lodash.includes", "npm:4.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isboolean", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/lodash.isboolean-npm-3.0.3-b575b41488-b70068b4a8.zip/node_modules/lodash.isboolean/",\
+          "packageDependencies": [\
+            ["lodash.isboolean", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isinteger", [\
+        ["npm:4.0.4", {\
+          "packageLocation": "./.yarn/cache/lodash.isinteger-npm-4.0.4-42add9f4e1-6034821b3f.zip/node_modules/lodash.isinteger/",\
+          "packageDependencies": [\
+            ["lodash.isinteger", "npm:4.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isnumber", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/lodash.isnumber-npm-3.0.3-b3bb5f7347-913784275b.zip/node_modules/lodash.isnumber/",\
+          "packageDependencies": [\
+            ["lodash.isnumber", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isplainobject", [\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip/node_modules/lodash.isplainobject/",\
+          "packageDependencies": [\
+            ["lodash.isplainobject", "npm:4.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isstring", [\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/lodash.isstring-npm-4.0.1-721fee791c-eaac87ae96.zip/node_modules/lodash.isstring/",\
+          "packageDependencies": [\
+            ["lodash.isstring", "npm:4.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lodash.merge", [\
         ["npm:4.6.2", {\
           "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",\
           "packageDependencies": [\
             ["lodash.merge", "npm:4.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.once", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/lodash.once-npm-4.1.1-d8ba329ead-d768fa9f9b.zip/node_modules/lodash.once/",\
+          "packageDependencies": [\
+            ["lodash.once", "npm:4.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -19758,6 +19894,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:6.1.2"],\
             ["@testing-library/react", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:14.0.0"],\
             ["@types/jest", "npm:29.5.4"],\
+            ["@types/jsonwebtoken", "npm:9.0.3"],\
             ["@types/node", "npm:20.5.7"],\
             ["@types/react", "npm:18.2.21"],\
             ["@types/react-dom", "npm:18.2.7"],\
@@ -19780,6 +19917,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.6.13"],\
             ["jest", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
             ["jest-environment-jsdom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
+            ["jsonwebtoken", "npm:9.0.2"],\
             ["next", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:13.4.19"],\
             ["next-auth", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:4.23.1"],\
             ["postcss", "npm:8.4.29"],\
