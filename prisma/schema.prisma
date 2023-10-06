@@ -1,9 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  output = "../src/generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -12,31 +9,31 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  email String
-  nickname String
+  id              String     @id @default(uuid())
+  email           String
+  nickname        String
   profileImageUrl String
-  createdAt DateTime @default(now())
-  provider Provider
-  workbooks Workbook[]
+  createdAt       DateTime   @default(now())
+  provider        Provider
+  workbooks       Workbook[]
 }
 
 model Workbook {
-  id String @id @default(uuid())
-  title String
-  createdAt DateTime @default(now())
-  updatedAt DateTime? @updatedAt
-  userId String
-  user User @relation(fields: [userId], references: [id])
+  id        String     @id @default(uuid())
+  title     String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime?  @updatedAt
+  userId    String
   questions Question[]
+  user      User       @relation(fields: [userId], references: [id])
 }
 
 model Question {
-  id String @id @default(uuid())
-  title String
-  answer String
+  id         String   @id @default(uuid())
+  title      String
+  answer     String
   workbookId String
-  workbook Workbook @relation(fields: [workbookId], references: [id], onDelete: Cascade)
+  workbook   Workbook @relation(fields: [workbookId], references: [id], onDelete: Cascade)
 }
 
 enum Provider {
