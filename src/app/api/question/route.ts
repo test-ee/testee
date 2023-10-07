@@ -10,13 +10,15 @@ export async function POST(request: Request) {
     await prisma.question.create({
       data,
     })
+
+    return NextResponse.json({ message: 'question create success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'create success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
 
 export async function PATCH(request: Request) {
@@ -33,13 +35,15 @@ export async function PATCH(request: Request) {
         answer,
       },
     })
+
+    return NextResponse.json({ message: 'question update success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'update success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
 
 export async function DELETE(request: Request) {
@@ -52,11 +56,13 @@ export async function DELETE(request: Request) {
         id,
       },
     })
+
+    return NextResponse.json({ message: 'question delete success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'delete success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }

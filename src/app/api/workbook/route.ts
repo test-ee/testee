@@ -6,11 +6,10 @@ export async function GET(request: Request) {
   const prisma = new PrismaClient()
   const { searchParams } = new URL(request.url)
   const { userId, workbookId, keyword, take = 10, cursorId } = Object.fromEntries(searchParams.entries())
-  let data = null
 
   try {
     if (workbookId) {
-      data = await prisma.workbook.findUnique({
+      const data = await prisma.workbook.findUnique({
         where: {
           id: workbookId,
         },
@@ -28,7 +27,7 @@ export async function GET(request: Request) {
       return NextResponse.json({ data }, { status: 200 })
     }
 
-    data = await prisma.workbook.findMany({
+    const data = await prisma.workbook.findMany({
       take: Number(take),
       skip: cursorId ? 1 : 0,
       ...(cursorId && { cursor: { id: cursorId } }),
@@ -44,13 +43,15 @@ export async function GET(request: Request) {
         createdAt: 'desc',
       },
     })
+
+    return NextResponse.json({ data }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ data }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
 
 export async function POST(request: Request) {
@@ -61,13 +62,15 @@ export async function POST(request: Request) {
     await prisma.workbook.create({
       data,
     })
+
+    return NextResponse.json({ message: 'workbook create success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'create success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
 
 export async function PUT(request: Request) {
@@ -83,13 +86,15 @@ export async function PUT(request: Request) {
         title,
       },
     })
+
+    return NextResponse.json({ message: 'workbook change success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'change success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
 
 export async function DELETE(request: Request) {
@@ -102,11 +107,13 @@ export async function DELETE(request: Request) {
         id,
       },
     })
+
+    return NextResponse.json({ message: 'workbook delete success' }, { status: 200 })
   } catch (e) {
     if (e instanceof PrismaClientValidationError || e instanceof PrismaClientKnownRequestError) {
       return NextResponse.json({ message: e.message.replaceAll('\n', '') }, { status: 500 })
     }
   }
 
-  return NextResponse.json({ message: 'delete success' }, { status: 200 })
+  return NextResponse.json({ message: 'internal server error' }, { status: 500 })
 }
