@@ -11,9 +11,17 @@ export async function POST(request: Request) {
 
     const decodedAccessToken = jwt.verify(accessToken, process.env.JWT_SECRET_KEY || '')
     const decodedRefreshToken = jwt.verify(refreshToken, process.env.JWT_SECRET_KEY || '')
+    if (typeof decodedAccessToken === 'string' || typeof decodedRefreshToken === 'string')
+      throw new Error('token error')
 
-    const newAccessToken = jwt.sign(decodedAccessToken, process.env.JWT_SECRET_KEY || '', { expiresIn: '1d' })
-    const newRefreshToken = jwt.sign(decodedRefreshToken, process.env.JWT_SECRET_KEY || '', { expiresIn: '30d' })
+    const now = Math.floor(Date.now() / 1000)
+    if (decodedRefreshToken.exp! < now) throw new Error('refreshToken expired')
+
+    const { exp: accessExp, ...accessTokenPayloads } = decodedAccessToken
+    const { exp: refreshExp, ...refreshTokenPayloads } = decodedRefreshToken
+
+    const newAccessToken = jwt.sign(accessTokenPayloads, process.env.JWT_SECRET_KEY || '', { expiresIn: '1d' })
+    const newRefreshToken = jwt.sign(refreshTokenPayloads, process.env.JWT_SECRET_KEY || '', { expiresIn: '30d' })
 
     return NextResponse.json({ accessToken: newAccessToken, refreshToken: newRefreshToken }, { status: 200 })
   } catch (e) {
