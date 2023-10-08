@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const { exp: accessExp, ...accessTokenPayloads } = decodedAccessToken
     const { exp: refreshExp, ...refreshTokenPayloads } = decodedRefreshToken
 
-    const newAccessToken = jwt.sign(accessTokenPayloads, process.env.JWT_SECRET_KEY || '', { expiresIn: '1d' })
+    const newAccessToken = jwt.sign(accessTokenPayloads, process.env.JWT_SECRET_KEY || '', { expiresIn: '1h' })
     const newRefreshToken = jwt.sign(refreshTokenPayloads, process.env.JWT_SECRET_KEY || '', { expiresIn: '30d' })
 
     return NextResponse.json({ accessToken: newAccessToken, refreshToken: newRefreshToken }, { status: 200 })
