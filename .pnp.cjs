@@ -66,6 +66,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.6.13"],\
             ["jest", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
             ["jest-environment-jsdom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
+            ["jose", "npm:4.15.2"],\
             ["jsonwebtoken", "npm:9.0.2"],\
             ["next", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:13.4.19"],\
             ["next-auth", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:4.23.1"],\
@@ -14933,6 +14934,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jose", "npm:4.14.6"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.15.2", {\
+          "packageLocation": "./.yarn/cache/jose-npm-4.15.2-fed23a3194-8f0cab1eef.zip/node_modules/jose/",\
+          "packageDependencies": [\
+            ["jose", "npm:4.15.2"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["js-tokens", [\
@@ -19917,6 +19925,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:0.6.13"],\
             ["jest", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
             ["jest-environment-jsdom", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:29.6.4"],\
+            ["jose", "npm:4.15.2"],\
             ["jsonwebtoken", "npm:9.0.2"],\
             ["next", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:13.4.19"],\
             ["next-auth", "virtual:bbfc6cf565539980fa171b11599b79e68ae8f6d85a81e0827311d080f7816f515b1272a1b28feb90f360b25465e5e8e11045e157aca1ac25474ed99481d6fc35#npm:4.23.1"],\
