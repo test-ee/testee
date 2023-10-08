@@ -27,8 +27,8 @@ export async function POST(request: Request) {
         message: 'signin success',
         data: {
           ...response,
-          accessToken: jwt.sign({ ...response }, process.env.JWT_SECRET_KEY || ''),
-          refreshToken: jwt.sign({}, process.env.JWT_SECRET_KEY || ''),
+          accessToken: jwt.sign({ ...response }, process.env.JWT_SECRET_KEY || '', { expiresIn: '1d' }),
+          refreshToken: jwt.sign({}, process.env.JWT_SECRET_KEY || '', { expiresIn: '30d' }),
         },
       },
       { status: 200 }
