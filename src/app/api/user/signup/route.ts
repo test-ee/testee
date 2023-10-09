@@ -16,8 +16,8 @@ export async function POST(request: Request) {
       message: 'create success',
       data: {
         ...response,
-        accessToken: jwt.sign({ ...response }, process.env.JWT_SECRET_KEY || ''),
-        refreshToken: jwt.sign({}, process.env.JWT_SECRET_KEY || ''),
+        accessToken: jwt.sign({ ...response }, process.env.JWT_SECRET_KEY || '', { expiresIn: '1h' }),
+        refreshToken: jwt.sign({}, process.env.JWT_SECRET_KEY || '', { expiresIn: '30d' }),
       },
     })
   } catch (e) {
