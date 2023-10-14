@@ -1,8 +1,8 @@
-import NextAuth from 'next-auth'
-import GoogleProvider from 'next-auth/providers/google'
-import NaverProvider from 'next-auth/providers/naver'
-import InstagramProvider from 'next-auth/providers/instagram'
-import KakaoProvider from 'next-auth/providers/kakao'
+import NextAuth from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
+import NaverProvider from 'next-auth/providers/naver';
+import InstagramProvider from 'next-auth/providers/instagram';
+import KakaoProvider from 'next-auth/providers/kakao';
 
 const handler = NextAuth({
   providers: [
@@ -24,20 +24,21 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async redirect(params) {
-      return '/login-test/signup/check'
+    async redirect() {
+      return '/login-test/signup/check';
     },
     async jwt({ token, account }) {
       return {
         ...token,
         ...account,
-      }
+      };
     },
-    async session({ session, token, user }) {
-      session.user = token
-      return session
+    async session({ session, token }) {
+      const temp = session;
+      temp.user = token;
+      return session;
     },
   },
-})
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };

@@ -1,35 +1,35 @@
-'use client'
+'use client';
 
-import { postSignup } from '@/api/postSignup'
-import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import React, { ChangeEvent, FormEvent } from 'react'
+import postSignup from '@/api/postSignup';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import React, { ChangeEvent, FormEvent } from 'react';
 
 export default function SignUp() {
-  const session = useSession()
-  const router = useRouter()
+  const session = useSession();
+  const router = useRouter();
 
   const [formData, setFormData] = React.useState({
     email: session.data?.user?.email || '',
     nickname: (session.data?.user as { nickname: string }).nickname || '',
     profileImageUrl: (session.data?.user as { profileImageUrl: string }).profileImageUrl || '',
-  })
+  });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target
+    const { id, value } = e.target;
 
     setFormData((prev) => ({
       ...prev,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     try {
-      e.preventDefault()
+      e.preventDefault();
 
-      const { provider, providerAccountId } = session.data?.user as { provider: string; providerAccountId: string }
-      const { email, nickname, profileImageUrl } = formData
+      const { provider, providerAccountId } = session.data?.user as { provider: string; providerAccountId: string };
+      const { email, nickname, profileImageUrl } = formData;
 
       const {
         data: { accessToken, refreshToken },
@@ -39,23 +39,23 @@ export default function SignUp() {
         nickname,
         profileImageUrl,
         provider,
-      })
+      });
 
-      localStorage.setItem('accessToken', accessToken)
-      localStorage.setItem('refreshToken', refreshToken)
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('refreshToken', refreshToken);
 
-      router.push('/')
-    } catch (e) {
-      console.error(e)
+      router.push('/');
+    } catch (error) {
+      console.error(error);
     }
-  }
+  };
 
   React.useEffect(() => {
-    console.log(session)
+    console.log(session);
     if (session.status === 'unauthenticated') {
-      router.push('/login-test')
+      router.push('/login-test');
     }
-  }, [session])
+  }, [session]);
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col justify-center align-middle text-black bg-white'>
@@ -64,5 +64,5 @@ export default function SignUp() {
       <input id='profileImageUrl' value={formData.profileImageUrl} onChange={handleChange} type='file' />
       <button type='submit'>회원가입</button>
     </form>
-  )
+  );
 }
