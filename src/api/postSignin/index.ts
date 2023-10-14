@@ -1,13 +1,17 @@
-import { axiosInstance } from '..'
+import axiosInstance from '..';
 
-export const postSignin = async (userId: string) => {
+const postSignin = async (userId: string) => {
   try {
     const { data } = await axiosInstance.post('/api/user/signin', {
       userId,
-    })
+    });
 
-    return data
+    return data;
   } catch (e) {
-    console.error(e)
+    console.error(e);
+
+    return null;
   }
-}
+};
+
+export default postSignin;
